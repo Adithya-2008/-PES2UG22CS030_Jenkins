@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 build 'PES2UG22CS030-1'
-                sh 'g++ main/hello.cpp -o output'
+                sh 'g++ main/hello.cpp -o output'  // Intentional error: Missing semicolon in hello.cpp
             }
         }
 
@@ -36,4 +36,4 @@ pipeline {
             error 'Pipeline failed'
         }
     }
-
+}
