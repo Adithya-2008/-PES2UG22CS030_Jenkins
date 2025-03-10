@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent any 
 
     stages {
         stage('Build') {
@@ -7,14 +7,16 @@ pipeline {
                 sh 'g++ main/hello.cpp -o main/hello_exec'
             }
         }
+
         stage('Test') {
             steps {
                 sh './main/hello_exec'
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying application...'
+                echo 'Deploying the application...'
             }
         }
     }
